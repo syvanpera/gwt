@@ -26,7 +26,7 @@ var rootCmd = &cobra.Command{
 func Execute() {
 	cc.Init(&cc.Config{
 		RootCmd:         rootCmd,
-		Headings:        cc.HiCyan + cc.Bold + cc.Underline,
+		Headings:        cc.HiGreen + cc.Bold + cc.Underline,
 		Commands:        cc.HiYellow + cc.Bold,
 		Example:         cc.Italic,
 		ExecName:        cc.Bold,
