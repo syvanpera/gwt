@@ -13,9 +13,10 @@ func init() {
 	var noUpstream bool
 
 	cmd := &cobra.Command{
-		Use:   "checkout <branch> [directory]",
-		Short: "Create or open a branch as a worktree",
-		Args:  cobra.RangeArgs(1, 2),
+		Use:     "checkout <branch> [directory]",
+		Aliases: []string{"co"},
+		Short:   "Create or open a branch as a worktree",
+		Args:    cobra.RangeArgs(1, 2),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			opts := ops.CheckoutOptions{Branch: args[0], Base: base, NoUpstream: noUpstream}
 			if len(args) > 1 {

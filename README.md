@@ -1,8 +1,8 @@
 # gwt
 
-A git worktree manager. `gwt` makes it ergonomic to work exclusively from git
-worktrees — one directory per branch — instead of switching branches in a single
-checkout.
+A git worktree manager. `gwt` makes it ergonomic to work exclusively from
+git worktrees — one directory per branch — instead of switching branches
+in a single checkout.
 
 ## How it works
 
@@ -62,7 +62,7 @@ cd my-repo/main
 
 ---
 
-### `gwt checkout <branch> [directory]`
+### `gwt checkout <branch> [directory]` / `gwt co <branch> [directory]`
 
 Create a new worktree for a branch. If the branch does not exist locally it is
 created from `--base`. The worktree directory defaults to the branch name.
