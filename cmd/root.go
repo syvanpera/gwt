@@ -13,8 +13,8 @@ var uiStepDelay time.Duration
 
 var rootCmd = &cobra.Command{
 	Use:           "gwt",
-	Short:         "Git worktree manager",
-	Long:          "gwt is a git worktree manager using a simple, status-driven terminal UI.",
+	Short:         "Git worktree management tool",
+	Long:          "gwt - Git worktree manager using a simple, status-driven terminal UI.",
 	SilenceUsage:  true,
 	SilenceErrors: true,
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
