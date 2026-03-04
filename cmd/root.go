@@ -5,6 +5,7 @@ import (
 	"os"
 	"time"
 
+	cc "github.com/ivanpirog/coloredcobra"
 	"github.com/spf13/cobra"
 	"github.com/syvanpera/gwt/internal/ui"
 )
@@ -23,6 +24,16 @@ var rootCmd = &cobra.Command{
 }
 
 func Execute() {
+	cc.Init(&cc.Config{
+		RootCmd:         rootCmd,
+		Headings:        cc.HiCyan + cc.Bold + cc.Underline,
+		Commands:        cc.HiYellow + cc.Bold,
+		Example:         cc.Italic,
+		ExecName:        cc.Bold,
+		Flags:           cc.Bold,
+		NoExtraNewlines: true,
+	})
+
 	if err := rootCmd.Execute(); err != nil {
 		if !ui.IsDisplayedError(err) {
 			fmt.Fprintln(os.Stderr, err)
