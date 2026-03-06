@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"os"
 
 	"github.com/charmbracelet/bubbles/list"
 	tea "github.com/charmbracelet/bubbletea"
@@ -85,7 +86,7 @@ func PickWorktree(options []WorktreeOption) (string, error) {
 		list:      l,
 		itemCount: len(items),
 	}
-	p := tea.NewProgram(m)
+	p := tea.NewProgram(m, tea.WithOutput(os.Stderr))
 	res, err := p.Run()
 	if err != nil {
 		return "", err

@@ -85,11 +85,11 @@ func init() {
 			}
 
 			if printPath {
-				cmd.Println(selectedPath)
+				_, _ = fmt.Fprintln(cmd.OutOrStdout(), selectedPath)
 				return nil
 			}
 
-			cmd.Printf("cd %s\n", shellQuote(selectedPath))
+			_, _ = fmt.Fprintf(cmd.OutOrStdout(), "cd %s\n", shellQuote(selectedPath))
 			return nil
 		},
 	}

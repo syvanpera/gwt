@@ -30,7 +30,7 @@ func init() {
 			if err != nil {
 				return err
 			}
-			cmd.Print(snippet)
+			_, _ = fmt.Fprint(cmd.OutOrStdout(), snippet)
 			return nil
 		},
 	}
