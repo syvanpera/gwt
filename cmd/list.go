@@ -39,6 +39,6 @@ func init() {
 			return nil
 		},
 	}
-	cmd.Flags().BoolVar(&showAll, "all", false, "include bare repository entry")
+	cmd.Flags().BoolVarP(&showAll, "all", "a", false, "include bare repository entry")
 	rootCmd.AddCommand(cmd)
 }
