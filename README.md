@@ -146,6 +146,45 @@ worktree branch names and directory names.
 
 ---
 
+### `gwt shell-init [shell]`
+
+Print shell integration snippet for auto-`cd` switching via `gwt switch`.
+
+```sh
+# auto-detect from $SHELL and print snippet
+gwt shell-init
+
+# explicitly target shell
+gwt shell-init bash
+gwt shell-init zsh
+gwt shell-init fish
+```
+
+To enable in your shell:
+
+```sh
+# bash
+gwt shell-init bash >> ~/.bashrc
+source ~/.bashrc
+
+# zsh
+gwt shell-init zsh >> ~/.zshrc
+source ~/.zshrc
+
+# fish
+gwt shell-init fish >> ~/.config/fish/config.fish
+source ~/.config/fish/config.fish
+```
+
+After enabling:
+
+```sh
+gwt switch feature/auth
+gwt switch
+```
+
+---
+
 ### `gwt remove <worktree>` / `gwt rm <worktree>`
 
 Remove a worktree and delete its local branch.
