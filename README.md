@@ -113,6 +113,39 @@ gwt ls
 
 ---
 
+### `gwt switch [worktree]`
+
+Emit a shell `cd` command for a worktree path. This lets your current shell
+change directories using `eval`.
+
+```sh
+# switch by branch name
+eval "$(gwt switch feature/auth)"
+
+# switch by directory name
+eval "$(gwt switch my-feature-dir)"
+
+# interactive selection if no argument is given
+eval "$(gwt switch)"
+
+# get path only
+cd "$(gwt switch feature/auth --print-path)"
+```
+
+When no worktree argument is provided, `gwt switch` opens an interactive
+selector (arrow keys + Enter, `q`/`Esc` to cancel).
+
+`gwt switch <worktree>` also supports shell tab-completion for available
+worktree branch names and directory names.
+
+**Flags**
+
+| Flag | Default | Description |
+|---|---|---|
+| `--print-path` | `false` | Print absolute path only (instead of `cd ...`) |
+
+---
+
 ### `gwt remove <worktree>` / `gwt rm <worktree>`
 
 Remove a worktree and delete its local branch.
